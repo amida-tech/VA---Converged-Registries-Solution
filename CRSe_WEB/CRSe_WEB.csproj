@@ -1,0 +1,923 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B60D2EF4-AC19-4D19-991D-7605339F9259}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRSe_WEB</RootNamespace>
+    <AssemblyName>CRSe_WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44301</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Software\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\..\..\Software\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".jazzignore" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Menu.aspx" />
+    <Content Include="Admin\Settings.aspx" />
+    <Content Include="Admin\SettingsLogView.aspx" />
+    <Content Include="Admin\Survey.aspx" />
+    <Content Include="Admin\SurveyFields.aspx" />
+    <Content Include="Admin\User.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="Cohorts\Activity.aspx" />
+    <Content Include="Cohorts\Cohort.aspx" />
+    <Content Include="Cohorts\Default.aspx" />
+    <Content Include="Cohorts\FrameworkData.aspx" />
+    <Content Include="Cohorts\Registry.aspx" />
+    <Content Include="Cohorts\UDF.aspx" />
+    <Content Include="Cohorts\Workstream.aspx" />
+    <Content Include="Common\Activities.aspx" />
+    <Content Include="Common\Patients.aspx" />
+    <Content Include="Common\Providers.aspx" />
+    <Content Include="Common\Referrals.aspx" />
+    <Content Include="Common\Surveys.aspx" />
+    <Content Include="Common\UDFs.aspx" />
+    <Content Include="Common\Workstreams.aspx" />
+    <Content Include="Content\eHMP_ADK.css" />
+    <Content Include="Content\eHMP_Applets.css" />
+    <Content Include="Content\eHMP_Vendor.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Controls\AdminUser.ascx" />
+    <Content Include="Controls\PatientReferral.ascx" />
+    <Content Include="Controls\ViewActivity.ascx" />
+    <Content Include="Controls\ViewPatient.ascx" />
+    <Content Include="Controls\ViewProvider.ascx" />
+    <Content Include="Controls\ViewReferral.ascx" />
+    <Content Include="Controls\ViewWorkstream.ascx" />
+    <Content Include="CustomErrors\AccessDenied.aspx" />
+    <Content Include="CustomErrors\Default.aspx" />
+    <Content Include="Custom\BCR\Default.aspx" />
+    <Content Include="DataDictionary.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Help\Administration.aspx">
+      <BrowseToURL>~/Help/Administration.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Help\Default.aspx" />
+    <Content Include="Help\GettingStarted.aspx" />
+    <Content Include="Help\Instructions.aspx" />
+    <Content Include="Help\MyTasks.aspx">
+      <BrowseToURL>~/Help/MyTasks.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Help\Registries_Cohorts.aspx" />
+    <Content Include="Help\Reports.aspx" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\inter-header-banner-bottom.jpg" />
+    <Content Include="Images\inter-header-banner-top-right.jpg" />
+    <Content Include="Images\inter-header-banner-top.jpg" />
+    <Content Include="Images\menu-separator-alt.jpg" />
+    <Content Include="Images\menu-separator.jpg" />
+    <Content Include="Properties\PublishProfiles\CRSe_DEV.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\CRSe_PPD.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\CRSe_PROD.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\CRSe_STAGE.pubxml.user" />
+    <Content Include="RegistryInfo.aspx" />
+    <Content Include="Reports\Default.aspx" />
+    <Content Include="Reports\RunReport.aspx" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Common\Activity.aspx" />
+    <Content Include="Common\Default.aspx" />
+    <Content Include="Common\Patient.aspx" />
+    <Content Include="Common\Provider.aspx" />
+    <Content Include="Common\Referral.aspx" />
+    <Content Include="Common\RegistryInfo.aspx" />
+    <Content Include="Common\Survey.aspx" />
+    <Content Include="Common\Workstream.aspx" />
+    <Content Include="Scripts\TextHighlite.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SettingsLogView.aspx.cs">
+      <DependentUpon>SettingsLogView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SettingsLogView.aspx.designer.cs">
+      <DependentUpon>SettingsLogView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SurveyFields.aspx.cs">
+      <DependentUpon>SurveyFields.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SurveyFields.aspx.designer.cs">
+      <DependentUpon>SurveyFields.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseCode\ApplicationSession.cs" />
+    <Compile Include="BaseCode\BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseCode\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseCode\CrsMenu.cs" />
+    <Compile Include="BaseCode\CustomMembershipProvider.cs" />
+    <Compile Include="BaseCode\CustomProfileProvider.cs" />
+    <Compile Include="BaseCode\CustomRoleProvider.cs" />
+    <Compile Include="BaseCode\CustomSessionStateProvider.cs" />
+    <Compile Include="BaseCode\CrsMenuItem.cs" />
+    <Compile Include="BaseCode\PageModes.cs" />
+    <Compile Include="BaseCode\SearchResult.cs" />
+    <Compile Include="BaseCode\ServiceInterfaceManager.cg.cs">
+      <DependentUpon>ServiceInterfaceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseCode\ServiceInterfaceManager.cs" />
+    <Compile Include="BaseCode\UserSession.cs" />
+    <Compile Include="Cohorts\Activity.aspx.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\Activity.aspx.designer.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\Cohort.aspx.cs">
+      <DependentUpon>Cohort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\Cohort.aspx.designer.cs">
+      <DependentUpon>Cohort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\FrameworkData.aspx.cs">
+      <DependentUpon>FrameworkData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\FrameworkData.aspx.designer.cs">
+      <DependentUpon>FrameworkData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\Registry.aspx.cs">
+      <DependentUpon>Registry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\Registry.aspx.designer.cs">
+      <DependentUpon>Registry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\UDF.aspx.cs">
+      <DependentUpon>UDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\UDF.aspx.designer.cs">
+      <DependentUpon>UDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cohorts\Workstream.aspx.cs">
+      <DependentUpon>Workstream.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cohorts\Workstream.aspx.designer.cs">
+      <DependentUpon>Workstream.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Activities.aspx.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Activities.aspx.designer.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Patients.aspx.cs">
+      <DependentUpon>Patients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Patients.aspx.designer.cs">
+      <DependentUpon>Patients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Providers.aspx.cs">
+      <DependentUpon>Providers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Providers.aspx.designer.cs">
+      <DependentUpon>Providers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Referrals.aspx.cs">
+      <DependentUpon>Referrals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Referrals.aspx.designer.cs">
+      <DependentUpon>Referrals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Surveys.aspx.cs">
+      <DependentUpon>Surveys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Surveys.aspx.designer.cs">
+      <DependentUpon>Surveys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UDFs.aspx.cs">
+      <DependentUpon>UDFs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\UDFs.aspx.designer.cs">
+      <DependentUpon>UDFs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Workstreams.aspx.cs">
+      <DependentUpon>Workstreams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Workstreams.aspx.designer.cs">
+      <DependentUpon>Workstreams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminUser.ascx.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminUser.ascx.designer.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PatientReferral.ascx.cs">
+      <DependentUpon>PatientReferral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PatientReferral.ascx.designer.cs">
+      <DependentUpon>PatientReferral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewActivity.ascx.cs">
+      <DependentUpon>ViewActivity.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewActivity.ascx.designer.cs">
+      <DependentUpon>ViewActivity.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewPatient.ascx.cs">
+      <DependentUpon>ViewPatient.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewPatient.ascx.designer.cs">
+      <DependentUpon>ViewPatient.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewProvider.ascx.cs">
+      <DependentUpon>ViewProvider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewProvider.ascx.designer.cs">
+      <DependentUpon>ViewProvider.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewReferral.ascx.cs">
+      <DependentUpon>ViewReferral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewReferral.ascx.designer.cs">
+      <DependentUpon>ViewReferral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewWorkstream.ascx.cs">
+      <DependentUpon>ViewWorkstream.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewWorkstream.ascx.designer.cs">
+      <DependentUpon>ViewWorkstream.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomErrors\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomErrors\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomErrors\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomErrors\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\BCR\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Custom\BCR\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataDictionary.aspx.cs">
+      <DependentUpon>DataDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataDictionary.aspx.designer.cs">
+      <DependentUpon>DataDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\GettingStarted.aspx.cs">
+      <DependentUpon>GettingStarted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\GettingStarted.aspx.designer.cs">
+      <DependentUpon>GettingStarted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Instructions.aspx.cs">
+      <DependentUpon>Instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Instructions.aspx.designer.cs">
+      <DependentUpon>Instructions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\MyTasks.aspx.cs">
+      <DependentUpon>MyTasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\MyTasks.aspx.designer.cs">
+      <DependentUpon>MyTasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Registries_Cohorts.aspx.cs">
+      <DependentUpon>Registries_Cohorts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Registries_Cohorts.aspx.designer.cs">
+      <DependentUpon>Registries_Cohorts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistryInfo.aspx.cs">
+      <DependentUpon>RegistryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistryInfo.aspx.designer.cs">
+      <DependentUpon>RegistryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RunReport.aspx.cs">
+      <DependentUpon>RunReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\RunReport.aspx.designer.cs">
+      <DependentUpon>RunReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Activity.aspx.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Activity.aspx.designer.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Patient.aspx.cs">
+      <DependentUpon>Patient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Patient.aspx.designer.cs">
+      <DependentUpon>Patient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Provider.aspx.cs">
+      <DependentUpon>Provider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Provider.aspx.designer.cs">
+      <DependentUpon>Provider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Referral.aspx.cs">
+      <DependentUpon>Referral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Referral.aspx.designer.cs">
+      <DependentUpon>Referral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RegistryInfo.aspx.cs">
+      <DependentUpon>RegistryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\RegistryInfo.aspx.designer.cs">
+      <DependentUpon>RegistryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Workstream.aspx.cs">
+      <DependentUpon>Workstream.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Workstream.aspx.designer.cs">
+      <DependentUpon>Workstream.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SoaServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\CRSe_DEV.pubxml" />
+    <None Include="Properties\PublishProfiles\CRSe_PPD.pubxml" />
+    <None Include="Properties\PublishProfiles\CRSe_PROD.pubxml" />
+    <None Include="Properties\PublishProfiles\CRSe_STAGE.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings.StyleCop" />
+    <Content Include="Web References\SoaServices\APPLICATION_STATUS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\AppSettings.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\BCCCR_BCR_ALL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\SoaServices\CrsServices.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\SoaServices\DATA_DICTIONARY.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\DB_LOG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\DIM_TIME.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\DomainUser.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\INDIVIDUAL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\INDIVIDUAL_ADDRESS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\MESSAGE_LOG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\PATIENT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\PATIENT_IDS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\PATIENT_UDFs.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\DomainNames.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\ETL_ExtractBatch_Log.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\SoaServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\SoaServices\REFERRAL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\REFERRAL_DETAIL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\REGISTRY_COHORT_DATA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\REGISTRY_CORE_DATA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\ROLE_PERMISSIONS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SETTINGS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SPATIENT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SStaff_SStaff.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_COUNTRY.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_GUI_CONTROLS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_INDIVIDUAL_GROUP.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_INDIVIDUAL_TYPE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_QUESTION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_QUESTION_CHOICE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REFERRALSTS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REGISTRY.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REGISTRY_CODES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REGISTRY_COHORT_TYPES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REGISTRY_CORE_TYPES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_REG_UDFs.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_ROLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_SERVICE_OCCUPATION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_STATE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_SURVEY_SECTION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_SURVEY_SUB_SECTION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_SURVEY_TYPE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_USER_ACTIVITY_TYPE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_WKFACTIVITYSTS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_WKFACTIVITYTYPE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_WKFCASESTS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_WKFCASETYPE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SURVEYS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SURVEY_NOTES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\SURVEY_RESULTS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\USERS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\USER_ACTIVITY_LOG.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\USER_ROLES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\WKF_CASE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\WKF_CASE_ACTIVITY.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\WKF_CASE_ASSIGNMENT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\WKF_CASE_COMMENTS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\ReportItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_MENU_ITEMS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_WEB_PAGES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\STD_INSTITUTION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SoaServices\REFERRALcommon.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.PreProd.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Prod.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:1311/CrsServices.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SoaServices\</RelPath>
+      <UpdateFromURL>http://localhost:1311/CrsServices.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CRSe_WEB_SoaServices_CrsServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Help\Indexes\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PreProd|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>PORT</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:PORT/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

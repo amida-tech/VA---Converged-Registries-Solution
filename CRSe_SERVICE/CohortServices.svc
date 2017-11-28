@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CRSe_SERVICE.CohortServices" CodeBehind="CohortServices.cs" %>

@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CRSe_WEB.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "" "">
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <title><%: Page.Title %> - CRSe</title>
+    <link href="~/Content/Site.css" rel="stylesheet" /> 
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder runat="server">        
+        <script src="<%: ResolveUrl("~/Scripts/Site.js") %>"></script>
+    </asp:PlaceHolder>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+        <asp:scriptmanager runat="server" />
+        <header>
+            <div class="content-wrapper">
+                <div class="skiplink"><a href="#content">skip to page content</a></div>
+            </div>
+            <asp:Table ID="tblHeader" runat="server" Width="100%" CssClass="tblHeader">
+                <asp:TableRow>
+                    <asp:TableCell Height="67px" Width="590px">
+                        <asp:Image ID="imgHeaderBannerTop" runat="server" ImageUrl="~/Images/inter-header-banner-top.jpg" ToolTip="United States Department of Veterans Affairs" AlternateText="United States Department of Veterans Affairs" />
+                    </asp:TableCell>
+                    <asp:TableCell Height="67px" Width="177px">
+                        <asp:Image ID="imgHeaderBannerTopRight" runat="server" ImageUrl="~/Images/inter-header-banner-top-right.jpg" ToolTip="United States Department of Veterans Affairs" AlternateText="United States Department of Veterans Affairs" />
+                    </asp:TableCell>
+                    <asp:TableCell Height="67px" BackColor="Black">&nbsp;</asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <asp:Table ID="tblMenu" runat="server" Width="100%" CssClass="tblMenu">
+                <asp:TableRow>
+                    <asp:TableCell Height="27px" Width="149px">
+                        <asp:Image ID="imgHeaderBannerBottom" runat="server" ImageUrl="~/Images/inter-header-banner-bottom.jpg" ToolTip="United States Department of Veterans Affairs" />
+                    </asp:TableCell>
+                    <asp:TableCell Height="27px">
+                        <asp:Menu ID="mnuTopMenu" runat="server" CssClass="mnuTopMenu" 
+                            RenderingMode="Table" Orientation="Horizontal"  StaticTopSeparatorImageUrl="~/Images/menu-separator-alt.jpg">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="My Tasks" ToolTip="My Tasks" />
+                                <asp:MenuItem NavigateUrl="~/Reports/Default.aspx" Text="Reports" ToolTip="Reports" />
+                                <asp:MenuItem NavigateUrl="~/Cohorts/Default.aspx" Text="Cohorts" ToolTip="Cohorts" />
+                                <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Administration" ToolTip="Administration" />
+                                <asp:MenuItem NavigateUrl="~/Help/Default.aspx" Text="Help" ToolTip="Help" />
+                            </Items>
+
+                        </asp:Menu>
+
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="lblRegistries" runat="server" Text="Available Registries" AssociatedControlID="listRegistries" />&nbsp;&nbsp;
+                        <asp:DropDownList ID="listRegistries" runat="server" ToolTip="Select to be directed to registry home page" DataSourceID="dsRegistries" DataValueField="ID" DataTextField="NAME" AutoPostBack="true" OnDataBound="ListRegistries_DataBound" OnSelectedIndexChanged="ListRegistries_SelectedIndexChanged" />
+                        <asp:ObjectDataSource ID="dsRegistries" runat="server" TypeName="CRSe_WEB.BaseCode.ServiceInterfaceManager" SelectMethod="STD_REGISTRY_GET_ALL_NON_SYSTEM_BY_USER" OnSelecting="DsRegistries_Selecting" />&nbsp;&nbsp;
+                    </asp:TableCell>
+                </asp:TableRow>
+                
+            </asp:Table>
+        </header>
+        <div id="body">
+            <asp:Table ID="tblBody" runat="server" CssClass="tblBody">
+                <asp:TableRow>
+                    <asp:TableCell CssClass="leftMenu">
+                        <div class="content-wrapper">
+                            <div class="skiplink"><a href="#content">skip to page content</a></div>
+                        </div>
+                        <asp:Menu ID="mnuLeftMenu" runat="server" DataSourceID="dsLeftMenu"
+                            CssClass="mnuLeftMenu" RenderingMode="Table" Orientation="Vertical">
+                            <DataBindings>
+                                <asp:MenuItemBinding DataMember="CrsMenuItem" Depth="0" TextField="DisplayText" NavigateUrlField="NavigateUrl" SelectableField="Selectable" />
+                            </DataBindings>
+                        </asp:Menu>
+                       <asp:XmlDataSource ID="dsLeftMenu" runat="server" XPath="CrsMenu/MenuItems/CrsMenuItem" EnableCaching="false" />
+                        <br /><br /><br /><br />
+                        <br /><br /><br /><br />
+                    </asp:TableCell>
+                    <asp:TableCell CssClass="content">
+                        <br /><br />
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            <a id="content"></a>
+                        </asp:ContentPlaceHolder>
+                        <br /><br /><br /><br />
+                        <br /><br /><br /><br />
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+        </div>
+        <footer>
+            <p>
+                Current User: <%: HttpContext.Current.User.Identity.Name %><br />
+                <%--Current Registry: <%: ((CRSe_WEB.BaseCode.UserSession)Session["UserSession"]).CurrentRegistry %><br />--%>
+                CRSe Version: <%: typeof(CRSe_WEB.SiteMaster).Assembly.GetName().Version %><br />
+                <asp:HyperLink ID="linkDataDictionary" runat="server" NavigateUrl="~/DataDictionary.aspx" Text="Data Dictionary" ToolTip="Select to view the CRSe Data Dictionary" />
+            </p>
+        </footer>
+    </form>
+</body>
+</html>

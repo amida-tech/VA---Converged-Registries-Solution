@@ -1,0 +1,381 @@
+﻿html {
+    background-color: #1F497D;
+    margin: 5px;
+    padding: 0;
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+body {
+    background-color: #3F5259;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+a, a:link, a:visited, a:active {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+	a:hover {
+		color: #ffffff;
+		text-decoration: none;
+	}
+
+table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    vertical-align: top;
+}
+
+.tblHeader {
+}
+
+    .tblHeader img {
+        float: left;
+    }
+
+.tblMenu {
+}
+
+    .tblMenu td {
+        background-color: #2D3A3D;
+        border-bottom: 2px solid black;
+    }
+
+    .tblMenu img {
+        float: left;
+    }
+
+.tblForm {
+
+}
+
+.tblForm tr, .tblForm th, .tblForm td {
+    padding: 4px 8px 4px 8px;
+}
+
+.mnuTopMenu {
+    
+}
+
+.mnuTopMenu td {
+    border: none;
+    height: 27px;
+    vertical-align: middle;
+    padding: 0px 8px 0px 8px;
+}
+
+.mnuTopMenu td td {
+    border: none;
+}
+
+.mnuTopMenu a, .mnuTopMenu a:link, .mnuTopMenu a:visited, .mnuTopMenu a:active {
+	color: #ffffff;
+	text-decoration: underline;
+    width: 100%;
+    height: 100%;
+}
+
+	.mnuTopMenu a:hover {
+		color: #ffffff;
+		text-decoration: none;
+        width: 100%;
+        height: 100%;
+	}
+
+.mnuLeftMenu {
+    
+}
+
+.mnuLeftMenu td {
+    border-bottom: 2px solid #64808A;
+    height: 27px;
+    vertical-align: middle;
+    padding: 0px 8px 0px 8px;
+}
+
+.mnuLeftMenu td td {
+    border: none;
+}
+
+.mnuLeftMenu a {
+	color: #ffffff;
+	text-decoration: none;
+    font-weight: bold;
+    font-size: 12pt;
+    width: 100%;
+    height: 100%;
+}
+
+.mnuLeftMenu a:link, .mnuLeftMenu a:visited, .mnuLeftMenu a:active {
+	color: #ffffff;
+	text-decoration: underline;
+    font-weight: normal;
+    width: 100%;
+    height: 100%;
+    font-size: 10pt;
+}
+
+	.mnuLeftMenu a:hover {
+		color: #ffffff;
+		text-decoration: none;
+        width: 100%;
+        height: 100%;
+	}
+
+.tblBody {
+}
+
+.leftMenu {
+    background-color: #2D3A3D;
+    width: 150px;
+    padding: 0px 4px 0px 4px;
+}
+
+.leftMenu ul {
+    padding-left: 16px;
+}
+
+.content {
+    padding: 4px;
+}
+
+footer {
+    float: left;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #64808A;
+    width: 100%;
+}
+
+footer p {
+    padding: 0px 0px 0px 4px;
+}
+
+.gridRegistry {
+    border-collapse: collapse;
+}
+
+    .gridRegistry th {
+        background-color: #1F497D;
+        border: 1px solid #2D3A3D;
+        color: #ffffff;
+        padding: 5px;
+    }
+
+    .gridRegistry td {
+        background-color: #FFFFFF;
+        color: #2D3A3D;
+        border: 1px solid #2D3A3D;
+        padding: 5px;
+    }
+
+    .gridRegistry tr.pager {
+        border: 1px solid #2D3A3D;
+        padding: 2px;
+    }
+
+        .gridRegistry tr.pager td {
+            border: none;
+            padding: 2px;
+        }
+
+.gridRegistry a, .gridRegistry a:link, .gridRegistry a:visited, .gridRegistry a:active {
+	color: #2D3A3D;
+	text-decoration: underline;
+}
+
+	.gridRegistry a:hover {
+		color: #2D3A3D;
+		text-decoration: none;
+	}
+
+.gridRegistryEmpty td {
+    background-color: #3F5259;
+    color: #FFFFFF;
+    border: none;
+}
+
+.gridWizard {
+}
+
+.gridWizard tr, .gridWizard th, .gridWizard td {
+    padding: 4px 8px 4px 8px;
+}
+
+.tblCohort {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+    .tblCohort td.col1 {
+        border: 1px solid black;
+        padding:4px;
+    }
+
+    .tblCohort td.col2 {
+        border: 1px solid black;
+        padding:4px;
+    }
+
+/*Accordion*/
+.accordionHeader {
+    border: 1px solid #2D3A3D;
+    color: white;
+    background-color: #1F497D;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#master_content .accordionHeader a {
+    color: #FFFFFF;
+    background: none;
+    text-decoration: none;
+}
+
+#master_content .accordionHeader a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+.accordionHeaderSelected {
+    border: 1px solid #2D3A3D;
+    color: #FFFFFF;
+    background-color: #1F497D;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#master_content .accordionHeaderSelected a {
+    color: #FFFFFF;
+    background: none;
+    text-decoration: none;
+}
+
+#master_content .accordionHeaderSelected a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+.accordionContent {
+    background-color: #FFFFFF;
+    color: #2D3A3D;
+    border: 1px dashed #2D3A3D;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+/*Tab Control*/
+#MainContent_TabControl_body, #MainContent_AdminUser_TabControl_body
+{
+    background-color: #3F5259;
+}
+
+.ajax__tab_panel
+{
+    background-color: #3F5259;
+}
+
+.ajax__tab_tab {
+	color: #2D3A3D;
+	text-decoration: underline;
+}
+
+/*a.ajax__tab_tab, a.ajax__tab_tab:link, a.ajax__tab_tab:visited, a.ajax__tab_tab:active {
+	color: #2D3A3D;
+	text-decoration: underline;
+}*/
+
+/*Modal Popup*/
+.modalPopupTitle {
+    background-color: #64808A;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.modalPopupTable {
+    width: 100%
+}
+
+    .modalPopupTable td {
+        padding-left: 5px;
+    }
+
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalPopup {
+    background-color: #3F5259;
+    color: #FFFFFF;
+    border: 2px solid Gray;
+    padding: 0;
+}
+
+.modalPopup a, .modalPopup a:link, .modalPopup a:visited, .modalPopup a:active {
+	color: #2D3A3D;
+	text-decoration: underline;
+}
+
+	.modalPopup a:hover {
+		color: #2D3A3D;
+		text-decoration: none;
+	}
+
+/*Watermark*/
+.watermark {
+    color: Gray;
+    font-style: italic;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+/* Legacy */
+.skiplink a {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+}
+
+    .skiplink a:active, .skiplink a:focus {
+        background-color: #666;
+        border: 1px solid #FFF;
+        color: #FFF;
+        font-size: 13px;
+        font-weight: 700;
+        height: auto;
+        left: 3px;
+        overflow: visible;
+        position: absolute;
+        top: 3px;
+        width: auto;
+        z-index: 5;
+        padding: 3px 5px 5px;
+    }

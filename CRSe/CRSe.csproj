@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB798511-AF1C-47A5-A8A5-8696FBC31534}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRSe</RootNamespace>
+    <AssemblyName>CRSe</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PreProd|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\PreProd\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Prod\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\APPLICATION_STATUSManager.cg.cs">
+      <DependentUpon>APPLICATION_STATUSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\APPLICATION_STATUSManager.cs" />
+    <Compile Include="BLL\BCCCR_BCR_ALLManager.cg.cs">
+      <DependentUpon>BCCCR_BCR_ALLManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\BCCCR_BCR_ALLManager.cs" />
+    <Compile Include="BLL\MviManager.cs" />
+    <Compile Include="BLL\STD_FACILITYTYPEManager.cg.cs">
+      <DependentUpon>STD_FACILITYTYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_FACILITYTYPEManager.cs" />
+    <Compile Include="BLL\STD_INSTITUTIONManager.cg.cs">
+      <DependentUpon>STD_INSTITUTIONManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_INSTITUTIONManager.cs" />
+    <Compile Include="BLL\DATA_DICTIONARYManager.cg.cs">
+      <DependentUpon>DATA_DICTIONARYManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\DATA_DICTIONARYManager.cs" />
+    <Compile Include="BLL\DB_LOGManager.cg.cs">
+      <DependentUpon>DB_LOGManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\DB_LOGManager.cs" />
+    <Compile Include="BLL\DIM_TIMEManager.cg.cs">
+      <DependentUpon>DIM_TIMEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\DIM_TIMEManager.cs" />
+    <Compile Include="BLL\ETLManager.cs" />
+    <Compile Include="BLL\ETL_ExtractBatch_LogManager.cg.cs">
+      <DependentUpon>ETL_ExtractBatch_LogManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\ETL_ExtractBatch_LogManager.cs" />
+    <Compile Include="BLL\INDIVIDUALManager.cg.cs">
+      <DependentUpon>INDIVIDUALManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\INDIVIDUALManager.cs" />
+    <Compile Include="BLL\INDIVIDUAL_ADDRESSManager.cg.cs">
+      <DependentUpon>INDIVIDUAL_ADDRESSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\INDIVIDUAL_ADDRESSManager.cs" />
+    <Compile Include="BLL\LogManager.cs" />
+    <Compile Include="BLL\MESSAGE_LOGManager.cg.cs">
+      <DependentUpon>MESSAGE_LOGManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\MESSAGE_LOGManager.cs" />
+    <Compile Include="BLL\PATIENTManager.cg.cs">
+      <DependentUpon>PATIENTManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\PATIENTManager.cs" />
+    <Compile Include="BLL\PATIENT_IDSManager.cg.cs">
+      <DependentUpon>PATIENT_IDSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\PATIENT_IDSManager.cs" />
+    <Compile Include="BLL\PATIENT_UDFsManager.cg.cs">
+      <DependentUpon>PATIENT_UDFsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\PATIENT_UDFsManager.cs" />
+    <Compile Include="BLL\REFERRALManager.cg.cs">
+      <DependentUpon>REFERRALManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\REFERRALManager.cs" />
+    <Compile Include="BLL\REFERRAL_DETAILManager.cg.cs">
+      <DependentUpon>REFERRAL_DETAILManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\REFERRAL_DETAILManager.cs" />
+    <Compile Include="BLL\REGISTRY_COHORT_DATAManager.cg.cs">
+      <DependentUpon>REGISTRY_COHORT_DATAManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\REGISTRY_COHORT_DATAManager.cs" />
+    <Compile Include="BLL\REGISTRY_CORE_DATAManager.cg.cs">
+      <DependentUpon>REGISTRY_CORE_DATAManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\REGISTRY_CORE_DATAManager.cs" />
+    <Compile Include="BLL\ReportManager.cs" />
+    <Compile Include="BLL\ROLE_PERMISSIONSManager.cg.cs">
+      <DependentUpon>ROLE_PERMISSIONSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\ROLE_PERMISSIONSManager.cs" />
+    <Compile Include="BLL\SETTINGSManager.cg.cs">
+      <DependentUpon>SETTINGSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SETTINGSManager.cs" />
+    <Compile Include="BLL\STD_MENU_ITEMSManager.cg.cs">
+      <DependentUpon>STD_MENU_ITEMSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_MENU_ITEMSManager.cs" />
+    <Compile Include="BLL\STD_WEB_PAGESManager.cg.cs">
+      <DependentUpon>STD_WEB_PAGESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_WEB_PAGESManager.cs" />
+    <Compile Include="BO\AppSettings.cs" />
+    <Compile Include="BO\ETL_ExtractBatch_Log.cg.cs">
+      <DependentUpon>ETL_ExtractBatch_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ETL_ExtractBatch_Log.cs" />
+    <Compile Include="BO\REFERRALcommon.cs" />
+    <Compile Include="BO\SharedDataSet.cs" />
+    <Compile Include="BLL\SPATIENTManager.cg.cs">
+      <DependentUpon>SPATIENTManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SPATIENTManager.cs" />
+    <Compile Include="BLL\SStaff_SStaffManager.cg.cs">
+      <DependentUpon>SStaff_SStaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SStaff_SStaffManager.cs" />
+    <Compile Include="BLL\STD_COUNTRYManager.cg.cs">
+      <DependentUpon>STD_COUNTRYManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_COUNTRYManager.cs" />
+    <Compile Include="BLL\STD_GUI_CONTROLSManager.cg.cs">
+      <DependentUpon>STD_GUI_CONTROLSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_GUI_CONTROLSManager.cs" />
+    <Compile Include="BLL\STD_INDIVIDUAL_GROUPManager.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_GROUPManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_INDIVIDUAL_GROUPManager.cs" />
+    <Compile Include="BLL\STD_INDIVIDUAL_TYPEManager.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_TYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_INDIVIDUAL_TYPEManager.cs" />
+    <Compile Include="BLL\STD_QUESTIONManager.cg.cs">
+      <DependentUpon>STD_QUESTIONManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_QUESTIONManager.cs" />
+    <Compile Include="BLL\STD_QUESTION_CHOICEManager.cg.cs">
+      <DependentUpon>STD_QUESTION_CHOICEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_QUESTION_CHOICEManager.cs" />
+    <Compile Include="BLL\STD_REFERRALSTSManager.cg.cs">
+      <DependentUpon>STD_REFERRALSTSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REFERRALSTSManager.cs" />
+    <Compile Include="BLL\STD_REG_UDFsManager.cg.cs">
+      <DependentUpon>STD_REG_UDFsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REG_UDFsManager.cs" />
+    <Compile Include="BLL\STD_REGISTRYManager.cg.cs">
+      <DependentUpon>STD_REGISTRYManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REGISTRYManager.cs" />
+    <Compile Include="BLL\STD_REGISTRY_CODESManager.cg.cs">
+      <DependentUpon>STD_REGISTRY_CODESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REGISTRY_CODESManager.cs" />
+    <Compile Include="BLL\STD_REGISTRY_COHORT_TYPESManager.cg.cs">
+      <DependentUpon>STD_REGISTRY_COHORT_TYPESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REGISTRY_COHORT_TYPESManager.cs" />
+    <Compile Include="BLL\STD_REGISTRY_CORE_TYPESManager.cg.cs">
+      <DependentUpon>STD_REGISTRY_CORE_TYPESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_REGISTRY_CORE_TYPESManager.cs" />
+    <Compile Include="BLL\STD_ROLEManager.cg.cs">
+      <DependentUpon>STD_ROLEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_ROLEManager.cs" />
+    <Compile Include="BLL\STD_SERVICE_OCCUPATIONManager.cg.cs">
+      <DependentUpon>STD_SERVICE_OCCUPATIONManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_SERVICE_OCCUPATIONManager.cs" />
+    <Compile Include="BLL\STD_STATEManager.cg.cs">
+      <DependentUpon>STD_STATEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_STATEManager.cs" />
+    <Compile Include="BLL\STD_SURVEY_SECTIONManager.cg.cs">
+      <DependentUpon>STD_SURVEY_SECTIONManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_SURVEY_SECTIONManager.cs" />
+    <Compile Include="BLL\STD_SURVEY_SUB_SECTIONManager.cg.cs">
+      <DependentUpon>STD_SURVEY_SUB_SECTIONManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_SURVEY_SUB_SECTIONManager.cs" />
+    <Compile Include="BLL\STD_SURVEY_TYPEManager.cg.cs">
+      <DependentUpon>STD_SURVEY_TYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_SURVEY_TYPEManager.cs" />
+    <Compile Include="BLL\STD_USER_ACTIVITY_TYPEManager.cg.cs">
+      <DependentUpon>STD_USER_ACTIVITY_TYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_USER_ACTIVITY_TYPEManager.cs" />
+    <Compile Include="BLL\STD_WKFACTIVITYSTSManager.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYSTSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_WKFACTIVITYSTSManager.cs" />
+    <Compile Include="BLL\STD_WKFACTIVITYTYPEManager.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYTYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_WKFACTIVITYTYPEManager.cs" />
+    <Compile Include="BLL\STD_WKFCASESTSManager.cg.cs">
+      <DependentUpon>STD_WKFCASESTSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_WKFCASESTSManager.cs" />
+    <Compile Include="BLL\STD_WKFCASETYPEManager.cg.cs">
+      <DependentUpon>STD_WKFCASETYPEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\STD_WKFCASETYPEManager.cs" />
+    <Compile Include="BLL\SURVEY_NOTESManager.cg.cs">
+      <DependentUpon>SURVEY_NOTESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SURVEY_NOTESManager.cs" />
+    <Compile Include="BLL\SURVEY_RESULTSManager.cg.cs">
+      <DependentUpon>SURVEY_RESULTSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SURVEY_RESULTSManager.cs" />
+    <Compile Include="BLL\SURVEYSManager.cg.cs">
+      <DependentUpon>SURVEYSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SURVEYSManager.cs" />
+    <Compile Include="BLL\USER_ACTIVITY_LOGManager.cg.cs">
+      <DependentUpon>USER_ACTIVITY_LOGManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\USER_ACTIVITY_LOGManager.cs" />
+    <Compile Include="BLL\USER_ROLESManager.cg.cs">
+      <DependentUpon>USER_ROLESManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\USER_ROLESManager.cs" />
+    <Compile Include="BLL\USERSManager.cg.cs">
+      <DependentUpon>USERSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\USERSManager.cs" />
+    <Compile Include="BLL\WKF_CASEManager.cg.cs">
+      <DependentUpon>WKF_CASEManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\WKF_CASEManager.cs" />
+    <Compile Include="BLL\WKF_CASE_ACTIVITYManager.cg.cs">
+      <DependentUpon>WKF_CASE_ACTIVITYManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\WKF_CASE_ACTIVITYManager.cs" />
+    <Compile Include="BLL\WKF_CASE_ASSIGNMENTManager.cg.cs">
+      <DependentUpon>WKF_CASE_ASSIGNMENTManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\WKF_CASE_ASSIGNMENTManager.cs" />
+    <Compile Include="BLL\WKF_CASE_COMMENTSManager.cg.cs">
+      <DependentUpon>WKF_CASE_COMMENTSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\WKF_CASE_COMMENTSManager.cs" />
+    <Compile Include="BO\APPLICATION_STATUS.cg.cs">
+      <DependentUpon>APPLICATION_STATUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\APPLICATION_STATUS.cs" />
+    <Compile Include="BO\BCCCR_BCR_ALL.cg.cs">
+      <DependentUpon>BCCCR_BCR_ALL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\BCCCR_BCR_ALL.cs" />
+    <Compile Include="BO\STD_FACILITYTYPE.cg.cs">
+      <DependentUpon>STD_FACILITYTYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_FACILITYTYPE.cs" />
+    <Compile Include="BO\STD_INSTITUTION.cg.cs">
+      <DependentUpon>STD_INSTITUTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_INSTITUTION.cs" />
+    <Compile Include="BO\DATA_DICTIONARY.cg.cs">
+      <DependentUpon>DATA_DICTIONARY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DATA_DICTIONARY.cs" />
+    <Compile Include="BO\DB_LOG.cg.cs">
+      <DependentUpon>DB_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DB_LOG.cs" />
+    <Compile Include="BO\DIM_TIME.cg.cs">
+      <DependentUpon>DIM_TIME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DIM_TIME.cs" />
+    <Compile Include="BO\Domain.cs" />
+    <Compile Include="BO\DomainNames.cs" />
+    <Compile Include="BO\DomainUser.cs" />
+    <Compile Include="BO\INDIVIDUAL.cg.cs">
+      <DependentUpon>INDIVIDUAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\INDIVIDUAL.cs" />
+    <Compile Include="BO\INDIVIDUAL_ADDRESS.cg.cs">
+      <DependentUpon>INDIVIDUAL_ADDRESS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\INDIVIDUAL_ADDRESS.cs" />
+    <Compile Include="BO\LogDetails.cs" />
+    <Compile Include="BO\MESSAGE_LOG.cg.cs">
+      <DependentUpon>MESSAGE_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\MESSAGE_LOG.cs" />
+    <Compile Include="BO\PATIENT.cg.cs">
+      <DependentUpon>PATIENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PATIENT.cs" />
+    <Compile Include="BO\PATIENT_IDS.cg.cs">
+      <DependentUpon>PATIENT_IDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PATIENT_IDS.cs" />
+    <Compile Include="BO\PATIENT_UDFs.cg.cs">
+      <DependentUpon>PATIENT_UDFs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PATIENT_UDFs.cs" />
+    <Compile Include="BO\REFERRAL.cg.cs">
+      <DependentUpon>REFERRAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\REFERRAL.cs" />
+    <Compile Include="BO\REFERRAL_DETAIL.cg.cs">
+      <DependentUpon>REFERRAL_DETAIL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\REFERRAL_DETAIL.cs" />
+    <Compile Include="BO\RegistryWizard.cs" />
+    <Compile Include="BO\REGISTRY_COHORT_DATA.cg.cs">
+      <DependentUpon>REGISTRY_COHORT_DATA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\REGISTRY_COHORT_DATA.cs" />
+    <Compile Include="BO\REGISTRY_CORE_DATA.cg.cs">
+      <DependentUpon>REGISTRY_CORE_DATA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\REGISTRY_CORE_DATA.cs" />
+    <Compile Include="BO\ReportItem.cs" />
+    <Compile Include="BO\ROLE_PERMISSIONS.cg.cs">
+      <DependentUpon>ROLE_PERMISSIONS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ROLE_PERMISSIONS.cs" />
+    <Compile Include="BO\SETTINGS.cg.cs">
+      <DependentUpon>SETTINGS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SETTINGS.cs" />
+    <Compile Include="BO\SharedDataSetDataSet.cs" />
+    <Compile Include="BO\SharedDataSetDataSetFieldsField.cs" />
+    <Compile Include="BO\SharedDataSetDataSetQuery.cs" />
+    <Compile Include="BO\SPATIENT.cg.cs">
+      <DependentUpon>SPATIENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SPATIENT.cs" />
+    <Compile Include="BO\SStaff_SStaff.cg.cs">
+      <DependentUpon>SStaff_SStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SStaff_SStaff.cs" />
+    <Compile Include="BO\STD_COUNTRY.cg.cs">
+      <DependentUpon>STD_COUNTRY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_COUNTRY.cs" />
+    <Compile Include="BO\STD_GUI_CONTROLS.cg.cs">
+      <DependentUpon>STD_GUI_CONTROLS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_GUI_CONTROLS.cs" />
+    <Compile Include="BO\STD_INDIVIDUAL_GROUP.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_GROUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_INDIVIDUAL_GROUP.cs" />
+    <Compile Include="BO\STD_INDIVIDUAL_TYPE.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_TYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_INDIVIDUAL_TYPE.cs" />
+    <Compile Include="BO\STD_MENU_ITEMS.cg.cs">
+      <DependentUpon>STD_MENU_ITEMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_MENU_ITEMS.cs" />
+    <Compile Include="BO\STD_QUESTION.cg.cs">
+      <DependentUpon>STD_QUESTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_QUESTION.cs" />
+    <Compile Include="BO\STD_QUESTION_CHOICE.cg.cs">
+      <DependentUpon>STD_QUESTION_CHOICE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_QUESTION_CHOICE.cs" />
+    <Compile Include="BO\STD_REFERRALSTS.cg.cs">
+      <DependentUpon>STD_REFERRALSTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REFERRALSTS.cs" />
+    <Compile Include="BO\STD_REG_UDFs.cg.cs">
+      <DependentUpon>STD_REG_UDFs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REG_UDFs.cs" />
+    <Compile Include="BO\STD_REGISTRY.cg.cs">
+      <DependentUpon>STD_REGISTRY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REGISTRY.cs" />
+    <Compile Include="BO\STD_REGISTRY_CODES.cg.cs">
+      <DependentUpon>STD_REGISTRY_CODES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REGISTRY_CODES.cs" />
+    <Compile Include="BO\STD_REGISTRY_COHORT_TYPES.cg.cs">
+      <DependentUpon>STD_REGISTRY_COHORT_TYPES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REGISTRY_COHORT_TYPES.cs" />
+    <Compile Include="BO\STD_REGISTRY_CORE_TYPES.cg.cs">
+      <DependentUpon>STD_REGISTRY_CORE_TYPES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_REGISTRY_CORE_TYPES.cs" />
+    <Compile Include="BO\STD_ROLE.cg.cs">
+      <DependentUpon>STD_ROLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_ROLE.cs" />
+    <Compile Include="BO\STD_SERVICE_OCCUPATION.cg.cs">
+      <DependentUpon>STD_SERVICE_OCCUPATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_SERVICE_OCCUPATION.cs" />
+    <Compile Include="BO\STD_STATE.cg.cs">
+      <DependentUpon>STD_STATE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_STATE.cs" />
+    <Compile Include="BO\STD_SURVEY_SECTION.cg.cs">
+      <DependentUpon>STD_SURVEY_SECTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_SURVEY_SECTION.cs" />
+    <Compile Include="BO\STD_SURVEY_SUB_SECTION.cg.cs">
+      <DependentUpon>STD_SURVEY_SUB_SECTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_SURVEY_SUB_SECTION.cs" />
+    <Compile Include="BO\STD_SURVEY_TYPE.cg.cs">
+      <DependentUpon>STD_SURVEY_TYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_SURVEY_TYPE.cs" />
+    <Compile Include="BO\STD_USER_ACTIVITY_TYPE.cg.cs">
+      <DependentUpon>STD_USER_ACTIVITY_TYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_USER_ACTIVITY_TYPE.cs" />
+    <Compile Include="BO\STD_WEB_PAGES.cg.cs">
+      <DependentUpon>STD_WEB_PAGES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_WEB_PAGES.cs" />
+    <Compile Include="BO\STD_WKFACTIVITYSTS.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYSTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_WKFACTIVITYSTS.cs" />
+    <Compile Include="BO\STD_WKFACTIVITYTYPE.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYTYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_WKFACTIVITYTYPE.cs" />
+    <Compile Include="BO\STD_WKFCASESTS.cg.cs">
+      <DependentUpon>STD_WKFCASESTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_WKFCASESTS.cs" />
+    <Compile Include="BO\STD_WKFCASETYPE.cg.cs">
+      <DependentUpon>STD_WKFCASETYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\STD_WKFCASETYPE.cs" />
+    <Compile Include="BO\SURVEY_NOTES.cg.cs">
+      <DependentUpon>SURVEY_NOTES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SURVEY_NOTES.cs" />
+    <Compile Include="BO\SURVEY_RESULTS.cg.cs">
+      <DependentUpon>SURVEY_RESULTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SURVEY_RESULTS.cs" />
+    <Compile Include="BO\SURVEYS.cg.cs">
+      <DependentUpon>SURVEYS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SURVEYS.cs" />
+    <Compile Include="BO\USER_ACTIVITY_LOG.cg.cs">
+      <DependentUpon>USER_ACTIVITY_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\USER_ACTIVITY_LOG.cs" />
+    <Compile Include="BO\USER_ROLES.cg.cs">
+      <DependentUpon>USER_ROLES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\USER_ROLES.cs" />
+    <Compile Include="BO\USERS.cg.cs">
+      <DependentUpon>USERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\USERS.cs" />
+    <Compile Include="BO\WKF_CASE.cg.cs">
+      <DependentUpon>WKF_CASE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WKF_CASE.cs" />
+    <Compile Include="BO\WKF_CASE_ACTIVITY.cg.cs">
+      <DependentUpon>WKF_CASE_ACTIVITY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WKF_CASE_ACTIVITY.cs" />
+    <Compile Include="BO\WKF_CASE_ASSIGNMENT.cg.cs">
+      <DependentUpon>WKF_CASE_ASSIGNMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WKF_CASE_ASSIGNMENT.cs" />
+    <Compile Include="BO\WKF_CASE_COMMENTS.cg.cs">
+      <DependentUpon>WKF_CASE_COMMENTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WKF_CASE_COMMENTS.cs" />
+    <Compile Include="DAL\APPLICATION_STATUSDB.cg.cs">
+      <DependentUpon>APPLICATION_STATUSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\APPLICATION_STATUSDB.cs" />
+    <Compile Include="DAL\BCCCR_BCR_ALLDB.cg.cs">
+      <DependentUpon>BCCCR_BCR_ALLDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BCCCR_BCR_ALLDB.cs" />
+    <Compile Include="DAL\MviDB.cs" />
+    <Compile Include="DAL\STD_FACILITYTYPEDB.cg.cs">
+      <DependentUpon>STD_FACILITYTYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_FACILITYTYPEDB.cs" />
+    <Compile Include="DAL\STD_INSTITUTIONDB.cg.cs">
+      <DependentUpon>STD_INSTITUTIONDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_INSTITUTIONDB.cs" />
+    <Compile Include="DAL\DATA_DICTIONARYDB.cg.cs">
+      <DependentUpon>DATA_DICTIONARYDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DATA_DICTIONARYDB.cs" />
+    <Compile Include="DAL\DB_LOGDB.cg.cs">
+      <DependentUpon>DB_LOGDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DB_LOGDB.cs" />
+    <Compile Include="DAL\DIM_TIMEDB.cg.cs">
+      <DependentUpon>DIM_TIMEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DIM_TIMEDB.cs" />
+    <Compile Include="DAL\ETLDB.cs" />
+    <Compile Include="DAL\ETL_ExtractBatch_LogDB.cg.cs">
+      <DependentUpon>ETL_ExtractBatch_LogDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ETL_ExtractBatch_LogDB.cs" />
+    <Compile Include="DAL\INDIVIDUALDB.cg.cs">
+      <DependentUpon>INDIVIDUALDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\INDIVIDUALDB.cs" />
+    <Compile Include="DAL\INDIVIDUAL_ADDRESSDB.cg.cs">
+      <DependentUpon>INDIVIDUAL_ADDRESSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\INDIVIDUAL_ADDRESSDB.cs" />
+    <Compile Include="DAL\MESSAGE_LOGDB.cg.cs">
+      <DependentUpon>MESSAGE_LOGDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MESSAGE_LOGDB.cs" />
+    <Compile Include="DAL\PATIENTDB.cg.cs">
+      <DependentUpon>PATIENTDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PATIENTDB.cs" />
+    <Compile Include="DAL\PATIENT_IDSDB.cg.cs">
+      <DependentUpon>PATIENT_IDSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PATIENT_IDSDB.cs" />
+    <Compile Include="DAL\PATIENT_UDFsDB.cg.cs">
+      <DependentUpon>PATIENT_UDFsDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PATIENT_UDFsDB.cs" />
+    <Compile Include="DAL\REFERRALDB.cg.cs">
+      <DependentUpon>REFERRALDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\REFERRALDB.cs" />
+    <Compile Include="DAL\REFERRAL_DETAILDB.cg.cs">
+      <DependentUpon>REFERRAL_DETAILDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\REFERRAL_DETAILDB.cs" />
+    <Compile Include="DAL\REGISTRY_COHORT_DATADB.cg.cs">
+      <DependentUpon>REGISTRY_COHORT_DATADB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\REGISTRY_COHORT_DATADB.cs" />
+    <Compile Include="DAL\REGISTRY_CORE_DATADB.cg.cs">
+      <DependentUpon>REGISTRY_CORE_DATADB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\REGISTRY_CORE_DATADB.cs" />
+    <Compile Include="DAL\ReportDB.cs" />
+    <Compile Include="DAL\ROLE_PERMISSIONSDB.cg.cs">
+      <DependentUpon>ROLE_PERMISSIONSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ROLE_PERMISSIONSDB.cs" />
+    <Compile Include="DAL\SETTINGSDB.cg.cs">
+      <DependentUpon>SETTINGSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SETTINGSDB.cs" />
+    <Compile Include="DAL\SPATIENTDB.cg.cs">
+      <DependentUpon>SPATIENTDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SPATIENTDB.cs" />
+    <Compile Include="DAL\SStaff_SStaffDB.cg.cs">
+      <DependentUpon>SStaff_SStaffDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SStaff_SStaffDB.cs" />
+    <Compile Include="DAL\STD_COUNTRYDB.cg.cs">
+      <DependentUpon>STD_COUNTRYDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_COUNTRYDB.cs" />
+    <Compile Include="DAL\STD_GUI_CONTROLSDB.cg.cs">
+      <DependentUpon>STD_GUI_CONTROLSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_GUI_CONTROLSDB.cs" />
+    <Compile Include="DAL\STD_INDIVIDUAL_GROUPDB.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_GROUPDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_INDIVIDUAL_GROUPDB.cs" />
+    <Compile Include="DAL\STD_INDIVIDUAL_TYPEDB.cg.cs">
+      <DependentUpon>STD_INDIVIDUAL_TYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_INDIVIDUAL_TYPEDB.cs" />
+    <Compile Include="DAL\STD_MENU_ITEMSDB.cg.cs">
+      <DependentUpon>STD_MENU_ITEMSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_MENU_ITEMSDB.cs" />
+    <Compile Include="DAL\STD_QUESTIONDB.cg.cs">
+      <DependentUpon>STD_QUESTIONDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_QUESTIONDB.cs" />
+    <Compile Include="DAL\STD_QUESTION_CHOICEDB.cg.cs">
+      <DependentUpon>STD_QUESTION_CHOICEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_QUESTION_CHOICEDB.cs" />
+    <Compile Include="DAL\STD_REFERRALSTSDB.cg.cs">
+      <DependentUpon>STD_REFERRALSTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REFERRALSTSDB.cs" />
+    <Compile Include="DAL\STD_REG_UDFsDB.cg.cs">
+      <DependentUpon>STD_REG_UDFsDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REG_UDFsDB.cs" />
+    <Compile Include="DAL\STD_REGISTRYDB.cg.cs">
+      <DependentUpon>STD_REGISTRYDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REGISTRYDB.cs" />
+    <Compile Include="DAL\STD_REGISTRY_CODESDB.cg.cs">
+      <DependentUpon>STD_REGISTRY_CODESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REGISTRY_CODESDB.cs" />
+    <Compile Include="DAL\STD_REGISTRY_COHORT_TYPESDB.cg.cs">
+      <DependentUpon>STD_REGISTRY_COHORT_TYPESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REGISTRY_COHORT_TYPESDB.cs" />
+    <Compile Include="DAL\STD_REGISTRY_CORE_TYPESDB.cg.cs">
+      <DependentUpon>STD_REGISTRY_CORE_TYPESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_REGISTRY_CORE_TYPESDB.cs" />
+    <Compile Include="DAL\STD_ROLEDB.cg.cs">
+      <DependentUpon>STD_ROLEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_ROLEDB.cs" />
+    <Compile Include="DAL\STD_SERVICE_OCCUPATIONDB.cg.cs">
+      <DependentUpon>STD_SERVICE_OCCUPATIONDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_SERVICE_OCCUPATIONDB.cs" />
+    <Compile Include="DAL\STD_STATEDB.cg.cs">
+      <DependentUpon>STD_STATEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_STATEDB.cs" />
+    <Compile Include="DAL\STD_SURVEY_SECTIONDB.cg.cs">
+      <DependentUpon>STD_SURVEY_SECTIONDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_SURVEY_SECTIONDB.cs" />
+    <Compile Include="DAL\STD_SURVEY_SUB_SECTIONDB.cg.cs">
+      <DependentUpon>STD_SURVEY_SUB_SECTIONDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_SURVEY_SUB_SECTIONDB.cs" />
+    <Compile Include="DAL\STD_SURVEY_TYPEDB.cg.cs">
+      <DependentUpon>STD_SURVEY_TYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_SURVEY_TYPEDB.cs" />
+    <Compile Include="DAL\STD_USER_ACTIVITY_TYPEDB.cg.cs">
+      <DependentUpon>STD_USER_ACTIVITY_TYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_USER_ACTIVITY_TYPEDB.cs" />
+    <Compile Include="DAL\STD_WEB_PAGESDB.cg.cs">
+      <DependentUpon>STD_WEB_PAGESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_WEB_PAGESDB.cs" />
+    <Compile Include="DAL\STD_WKFACTIVITYSTSDB.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYSTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_WKFACTIVITYSTSDB.cs" />
+    <Compile Include="DAL\STD_WKFACTIVITYTYPEDB.cg.cs">
+      <DependentUpon>STD_WKFACTIVITYTYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_WKFACTIVITYTYPEDB.cs" />
+    <Compile Include="DAL\STD_WKFCASESTSDB.cg.cs">
+      <DependentUpon>STD_WKFCASESTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_WKFCASESTSDB.cs" />
+    <Compile Include="DAL\STD_WKFCASETYPEDB.cg.cs">
+      <DependentUpon>STD_WKFCASETYPEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STD_WKFCASETYPEDB.cs" />
+    <Compile Include="DAL\SURVEY_NOTESDB.cg.cs">
+      <DependentUpon>SURVEY_NOTESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SURVEY_NOTESDB.cs" />
+    <Compile Include="DAL\SURVEY_RESULTSDB.cg.cs">
+      <DependentUpon>SURVEY_RESULTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SURVEY_RESULTSDB.cs" />
+    <Compile Include="DAL\SURVEYSDB.cg.cs">
+      <DependentUpon>SURVEYSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SURVEYSDB.cs" />
+    <Compile Include="DAL\USER_ACTIVITY_LOGDB.cg.cs">
+      <DependentUpon>USER_ACTIVITY_LOGDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USER_ACTIVITY_LOGDB.cs" />
+    <Compile Include="DAL\USER_ROLESDB.cg.cs">
+      <DependentUpon>USER_ROLESDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USER_ROLESDB.cs" />
+    <Compile Include="DAL\USERSDB.cg.cs">
+      <DependentUpon>USERSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USERSDB.cs" />
+    <Compile Include="DAL\WKF_CASEDB.cg.cs">
+      <DependentUpon>WKF_CASEDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WKF_CASEDB.cs" />
+    <Compile Include="DAL\WKF_CASE_ACTIVITYDB.cg.cs">
+      <DependentUpon>WKF_CASE_ACTIVITYDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WKF_CASE_ACTIVITYDB.cs" />
+    <Compile Include="DAL\WKF_CASE_ASSIGNMENTDB.cg.cs">
+      <DependentUpon>WKF_CASE_ASSIGNMENTDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WKF_CASE_ASSIGNMENTDB.cs" />
+    <Compile Include="DAL\WKF_CASE_COMMENTSDB.cg.cs">
+      <DependentUpon>WKF_CASE_COMMENTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WKF_CASE_COMMENTSDB.cs" />
+    <Compile Include="DAL\DBUtils.cg.cs">
+      <DependentUpon>DBUtils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DBUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MviService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".jazzignore" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings.StyleCop" />
+    <None Include="Web References\MviService\IdMHL7v3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MviService\IdMWebService.wsdl" />
+    <None Include="Web References\MviService\PRPA_IN201306UV02.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MviService\PRPA_IN201310UV02.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MviService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportService\ActiveState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\CacheRefreshPlan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\CacheRefreshPlanState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\CatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\DataRetrievalPlan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\DataSetDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\DataSource.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\DataSourceDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\DataSourcePrompt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Event.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ExpirationDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ExtensionParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ExtensionSettings.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ItemHistorySnapshot.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ItemParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ItemReferenceData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Job.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ModelCatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ModelDrillthroughReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ModelItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ParameterValue.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ParameterValueOrFieldReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Policy.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Property.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportService\ReportService2010.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReportService\Role.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Schedule.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ScheduleDefinitionOrReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Subscription.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Task.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Users\AI\Desktop\MVI\20160706\IdMWebService.xml">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MviService\</RelPath>
+      <UpdateFromURL>C:\Users\AI\Desktop\MVI\20160706\IdMWebService.xml</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CRSe_MviService_VAIdM</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/ReportServer/ReportService2010.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportService\</RelPath>
+      <UpdateFromURL>http://localhost/ReportServer/ReportService2010.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CRSe_ReportService_ReportingService2010</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

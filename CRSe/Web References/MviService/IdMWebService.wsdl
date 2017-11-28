@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://URL         .DNS   " xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/" xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://URL         .DNS   " xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns:stns="http://URL         .DNS   " xmlns:hl7v3="urn:hl7-org:v3" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://URL         .DNS   " xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="IdMHL7v3.xsd" namespace="urn:hl7-org:v3" />
+      <xsd:element name="PRPA_IN201305UV02" nillable="true" type="hl7v3:PRPA_IN201305UV02" />
+      <xsd:element name="PRPA_IN201306UV02" nillable="true" type="hl7v3:PRPA_IN201306UV02" />
+      <xsd:element name="PRPA_IN201309UV02" nillable="true" type="hl7v3:PRPA_IN201309UV02" />
+      <xsd:element name="PRPA_IN201310UV02" nillable="true" type="hl7v3:PRPA_IN201310UV02" />
+    </xsd:schema>
+  </types>
+  <message name="PRPA_IN201309UV02">
+    <part xmlns:partns="http://URL         .DNS   " name="inboundXML" element="partns:PRPA_IN201309UV02" />
+  </message>
+  <message name="PRPA_IN201310UV02">
+    <part xmlns:partns="http://URL         .DNS   " name="returnXML" element="partns:PRPA_IN201310UV02" />
+  </message>
+  <message name="PRPA_IN201305UV02">
+    <part xmlns:partns="http://URL         .DNS   " name="inboundXML" element="partns:PRPA_IN201305UV02" />
+  </message>
+  <message name="PRPA_IN201306UV02">
+    <part xmlns:partns="http://URL         .DNS   " name="returnXML" element="partns:PRPA_IN201306UV02" />
+  </message>
+  <portType name="VAIdMPort">
+    <operation name="PRPA_IN201309UV02">
+      <input message="tns:PRPA_IN201309UV02" />
+      <output message="tns:PRPA_IN201310UV02" />
+    </operation>
+    <operation name="PRPA_IN201305UV02">
+      <input message="tns:PRPA_IN201305UV02" />
+      <output message="tns:PRPA_IN201306UV02" />
+    </operation>
+  </portType>
+  <binding name="VAIdMPort" type="tns:VAIdMPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="PRPA_IN201309UV02">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PRPA_IN201305UV02">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="VAIdM">
+    <port name="VAIdMPort" binding="tns:VAIdMPort">
+      <soap:address location="http://DNS   .commserv.healthevet.DNS   :PORT/psim_webservice/IdMWebService" />
+    </port>
+  </service>
+</definitions>
